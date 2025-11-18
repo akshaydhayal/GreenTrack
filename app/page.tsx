@@ -11,11 +11,16 @@ export default function Home() {
       <div className="max-w-4xl w-full text-center space-y-8">
         {/* Header */}
         <div className="space-y-4">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Leaf className="w-12 h-12 text-primary-600" />
-            <h1 className="text-5xl font-bold text-gray-900">
-              GreenAI Business Optimizer
-            </h1>
+          <div className="flex flex-col items-center gap-3 mb-6">
+            <div className="flex items-center justify-center gap-3">
+              <Leaf className="w-12 h-12 text-primary-600" />
+              <h1 className="text-5xl font-bold text-gray-900">
+                GreenTrack
+              </h1>
+            </div>
+            <p className="text-lg text-primary-600 font-medium">
+              Tracking sustainability
+            </p>
           </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Transform your business with AI-powered sustainability insights. 

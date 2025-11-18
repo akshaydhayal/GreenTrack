@@ -139,7 +139,7 @@ export default function ResultsPage() {
         heightLeft -= pageHeight;
       }
 
-      pdf.save(`greenai-report-${result.businessData.businessType}-${Date.now()}.pdf`);
+      pdf.save(`greentrack-report-${result.businessData.businessType}-${Date.now()}.pdf`);
     } catch (error) {
       console.error("PDF generation error:", error);
       alert("Failed to generate PDF. Please try again.");

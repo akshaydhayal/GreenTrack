@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GreenAI Business Optimizer - Sustainable Business Solutions",
-  description: "AI-powered tool to help small businesses reduce carbon footprint and save money",
+  title: "GreenTrack - Tracking Sustainability",
+  description: "AI-powered tool to help small businesses track and reduce carbon footprint while saving money",
 };
 
 export default function RootLayout({

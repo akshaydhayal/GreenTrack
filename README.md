@@ -1,6 +1,8 @@
-# GreenAI Business Optimizer 🌱
+# GreenTrack 🌱
 
-An AI-powered tool that helps small businesses reduce their carbon footprint and save money through intelligent sustainability recommendations.
+**Tracking sustainability**
+
+An AI-powered tool that helps small businesses track and reduce their carbon footprint while saving money through intelligent sustainability recommendations.
 
 Built for the **GEF2025 Hackathon: The AI-Powered Entrepreneur - Protecting the Future**
 
