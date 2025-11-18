@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
+import { GoogleGenAI } from "@google/genai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Initialize Gemini client - automatically picks up GEMINI_API_KEY from environment
+const ai = process.env.GEMINI_API_KEY ? new GoogleGenAI({}) : null;
 
 // Emission factors (kg CO2 per unit)
 const EMISSION_FACTORS = {
@@ -113,32 +112,40 @@ Provide a JSON response with the following structure:
 
 Make recommendations specific to ${data.businessType} businesses. Be practical and actionable.`;
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "system",
-          content: "You are an expert sustainability consultant. Always respond with valid JSON only, no additional text.",
-        },
-        {
-          role: "user",
-          content: prompt,
-        },
-      ],
-      temperature: 0.7,
-      max_tokens: 2000,
-    });
-
-    const aiResponse = completion.choices[0]?.message?.content || "{}";
     let recommendations;
 
-    try {
-      // Extract JSON from response (handle markdown code blocks)
-      const jsonMatch = aiResponse.match(/\{[\s\S]*\}/);
-      const jsonString = jsonMatch ? jsonMatch[0] : aiResponse;
-      recommendations = JSON.parse(jsonString);
-    } catch (error) {
-      // Fallback recommendations if AI parsing fails
+    // Use AI if available, otherwise use fallback recommendations
+    if (ai) {
+      try {
+        // Combine system instruction with user prompt for Gemini
+        const fullPrompt = `You are an expert sustainability consultant. Always respond with valid JSON only, no additional text.
+
+${prompt}`;
+
+        const response = await ai.models.generateContent({
+          model: "gemini-2.0-flash-lite",
+          contents: fullPrompt,
+        });
+
+        const aiResponse = response.text || "{}";
+        
+        try {
+          // Extract JSON from response (handle markdown code blocks)
+          const jsonMatch = aiResponse.match(/\{[\s\S]*\}/);
+          const jsonString = jsonMatch ? jsonMatch[0] : aiResponse;
+          recommendations = JSON.parse(jsonString);
+        } catch (parseError) {
+          // Fall through to fallback recommendations
+          throw parseError;
+        }
+      } catch (aiError) {
+        // Fall through to fallback recommendations
+        console.warn("AI generation failed, using fallback:", aiError);
+      }
+    }
+
+    // Fallback recommendations if AI is not available or fails
+    if (!recommendations) {
       recommendations = {
         energy: [
           {
