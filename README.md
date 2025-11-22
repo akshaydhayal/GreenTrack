@@ -9,14 +9,21 @@ Built for the **GEF2025 Hackathon: The AI-Powered Entrepreneur - Protecting the 
 
 ## ✨ Features
 
+### Core Features
 - 📊 **Business Sustainability Analysis** - Comprehensive carbon footprint calculation
-- 💡 **AI-Generated Recommendations** - Personalized energy and waste reduction strategies
+- 💡 **AI-Generated Recommendations** - Personalized energy and waste reduction strategies powered by Google Gemini
 - 💰 **Cost-Saving Forecasts** - Monthly and yearly savings estimates
 - 🌱 **Carbon Footprint Scoring** - Visual score from 0-100 with color-coded ratings
 - 🏆 **Achievement Badge System** - Bronze, Silver, Gold, and Platinum badges
 - 📈 **Interactive Charts** - Visual breakdown of carbon emissions by source
 - 📄 **Downloadable PDF Reports** - Professional reports for presentations
-- 🎨 **Beautiful Modern UI** - Clean, intuitive design with smooth animations
+- 🎨 **Dark Green Eco Theme** - Beautiful, modern dark green UI with excellent contrast
+
+### New Advanced Features
+- 📊 **Industry Benchmarks** - Compare your business emissions against industry averages. See if you're performing above or below similar businesses in your sector.
+- 💵 **ROI Calculator** - Calculate return on investment for each sustainability action. See upfront costs, monthly savings, and payback periods to prioritize investments.
+- 🎁 **Incentive Finder** - Discover eligible government subsidies, grants, and tax incentives. Get direct links to application pages for solar, energy efficiency, waste management, and more.
+- 🎛️ **CO₂ Reduction Scenario Simulator** - Interactive sliders to test different reduction scenarios. See real-time impact on carbon footprint, score, badge, and savings. Get AI-powered insights for each scenario.
 
 ## 🚀 Quick Start
 
@@ -56,9 +63,12 @@ Built for the **GEF2025 Hackathon: The AI-Powered Entrepreneur - Protecting the 
    - AI generates personalized recommendations based on business type
    - Cost savings are estimated using regional averages
 
-3. **View Results**
+3. **View Comprehensive Results**
    - See your carbon footprint score and breakdown
-   - Review actionable recommendations
+   - Review actionable recommendations with ROI calculations
+   - Compare your emissions with industry benchmarks
+   - Discover eligible government incentives and subsidies
+   - Test different reduction scenarios with the interactive simulator
    - Check potential monthly/yearly savings
    - Earn achievement badges based on reduction potential
    - Download a professional PDF report
@@ -77,12 +87,17 @@ Built for the **GEF2025 Hackathon: The AI-Powered Entrepreneur - Protecting the 
 
 ```
 app/
-  ├── page.tsx              # Landing page with features overview
-  ├── analyze/page.tsx      # Multi-step business input form
-  ├── results/page.tsx      # Results dashboard with charts
-  ├── api/analyze/route.ts  # AI analysis API endpoint
-  ├── layout.tsx            # Root layout
-  └── globals.css           # Global styles and animations
+  ├── page.tsx                    # Landing page with features overview
+  ├── analyze/page.tsx            # Multi-step business input form
+  ├── results/page.tsx            # Results dashboard with tabbed interface
+  ├── api/
+  │   ├── analyze/route.ts        # AI analysis API endpoint (consolidated)
+  │   └── scenario-insights/      # AI insights for scenario simulator
+  ├── data/
+  │   ├── benchmarks.json         # Fallback benchmark data
+  │   └── roi-data.json           # Fallback ROI data
+  ├── layout.tsx                  # Root layout
+  └── globals.css                 # Global styles and dark green theme
 ```
 
 ## 🎯 Key Features Explained
@@ -100,12 +115,42 @@ Uses industry-standard emission factors:
 - **Gold**: 30-50% reduction potential
 - **Platinum**: 50%+ reduction potential
 
-### AI Recommendations
-The system provides:
+### AI-Powered Recommendations
+The system uses Google Gemini AI to provide:
 - Energy optimization strategies
 - Waste reduction plans
 - Cost-saving opportunities
 - Environmental impact estimates
+- Industry-specific insights
+
+### Industry Benchmarks
+- Compares your monthly CO₂ emissions with industry averages
+- Based on business type and employee count
+- Shows percentage difference (above/below average)
+- Provides context about typical emissions for your sector
+- AI-generated benchmarks for accurate comparisons
+
+### ROI Calculator
+- Shows upfront investment cost for each recommendation
+- Calculates monthly savings potential
+- Displays ROI timeline (months to break even)
+- Highlights "Fast ROI" actions (under 6 months)
+- Helps prioritize investments based on financial returns
+
+### Incentive Finder
+- Identifies eligible government programs and subsidies
+- Covers solar, energy efficiency, waste management, and tax incentives
+- Provides eligibility requirements and estimated value
+- Direct links to official application pages
+- AI-powered discovery of relevant incentives
+
+### Scenario Simulator
+- Interactive sliders for electricity, water, waste, and fuel reductions
+- Real-time calculation of new carbon footprint and score
+- Shows potential badge upgrades
+- Displays CO₂ reduction in kg and percentage
+- AI-generated insights for each scenario
+- Helps visualize impact before implementing changes
 
 ## 🏗️ Building for Production
 
@@ -117,9 +162,13 @@ npm start
 ## 📝 Notes
 
 - No database required - uses browser sessionStorage
-- Works offline with fallback recommendations
+- Works offline with fallback recommendations and data
+- AI requests are consolidated into a single API call for efficiency
 - Currency symbols can be customized in the code
 - All calculations use metric units (kg, kWh, liters)
+- Dark green eco-friendly theme throughout
+- Tabbed interface for organized results viewing
+- All features work with or without API key (using intelligent fallbacks)
 
 ## 🤝 Contributing
 

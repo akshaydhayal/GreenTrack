@@ -1,0 +1,73 @@
+{
+  "energy": {
+    "Switch to LED Lighting": {
+      "upfrontCost": 200,
+      "monthlySavings": 45,
+      "description": "Replace all incandescent and fluorescent bulbs with LED lights",
+      "category": "energy"
+    },
+    "Optimize HVAC System": {
+      "upfrontCost": 500,
+      "monthlySavings": 120,
+      "description": "Regular maintenance, programmable thermostats, and proper insulation",
+      "category": "energy"
+    },
+    "Install Smart Thermostat": {
+      "upfrontCost": 150,
+      "monthlySavings": 35,
+      "description": "Automated temperature control for optimal energy usage",
+      "category": "energy"
+    },
+    "Upgrade to Energy Star Appliances": {
+      "upfrontCost": 800,
+      "monthlySavings": 60,
+      "description": "Replace old appliances with energy-efficient models",
+      "category": "energy"
+    },
+    "Install Solar Panels": {
+      "upfrontCost": 5000,
+      "monthlySavings": 200,
+      "description": "Generate renewable energy and reduce grid dependency",
+      "category": "energy"
+    },
+    "Improve Building Insulation": {
+      "upfrontCost": 1200,
+      "monthlySavings": 80,
+      "description": "Better insulation reduces heating and cooling costs",
+      "category": "energy"
+    }
+  },
+  "waste": {
+    "Implement Waste Segregation": {
+      "upfrontCost": 50,
+      "monthlySavings": 30,
+      "description": "Separate recyclable materials to reduce landfill waste",
+      "category": "waste"
+    },
+    "Composting Program": {
+      "upfrontCost": 100,
+      "monthlySavings": 25,
+      "description": "Convert organic waste into compost, reducing disposal costs",
+      "category": "waste"
+    },
+    "Reduce Single-Use Plastics": {
+      "upfrontCost": 150,
+      "monthlySavings": 40,
+      "description": "Switch to reusable alternatives and reduce packaging costs",
+      "category": "waste"
+    },
+    "Waste Audit and Reduction Plan": {
+      "upfrontCost": 200,
+      "monthlySavings": 50,
+      "description": "Professional audit to identify waste reduction opportunities",
+      "category": "waste"
+    },
+    "Recycling Program Setup": {
+      "upfrontCost": 75,
+      "monthlySavings": 20,
+      "description": "Establish comprehensive recycling system",
+      "category": "waste"
+    }
+  }
+}
+

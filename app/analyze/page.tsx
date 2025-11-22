@@ -59,7 +59,7 @@ export default function AnalyzePage() {
       <div className="max-w-2xl w-full">
         <button
           onClick={() => router.push("/")}
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-8 transition-colors"
+          className="flex items-center gap-2 text-primary-300 hover:text-primary-200 mb-8 transition-colors font-medium"
         >
           <ArrowLeft className="w-5 h-5" />
           Back to Home
@@ -67,10 +67,10 @@ export default function AnalyzePage() {
 
         <div className="card">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-300 to-primary-400 bg-clip-text text-transparent mb-2">
               Business Information
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-300">
               Help us understand your business to provide personalized recommendations
             </p>
           </div>
@@ -78,14 +78,14 @@ export default function AnalyzePage() {
           {/* Progress Bar */}
           <div className="mb-8">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-primary-200">
                 Step {step} of 2
               </span>
-              <span className="text-sm text-gray-500">{(step / 2) * 100}%</span>
+              <span className="text-sm text-primary-300 font-semibold">{(step / 2) * 100}%</span>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2">
+            <div className="w-full bg-primary-800 rounded-full h-3 overflow-hidden">
               <div
-                className="bg-primary-600 h-2 rounded-full transition-all duration-300"
+                className="bg-gradient-to-r from-primary-500 to-primary-400 h-3 rounded-full transition-all duration-300 shadow-md"
                 style={{ width: `${(step / 2) * 100}%` }}
               />
             </div>
@@ -95,8 +95,8 @@ export default function AnalyzePage() {
             {step === 1 && (
               <div className="space-y-6 animate-fadeIn">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Business Type <span className="text-red-500">*</span>
+                  <label className="block text-sm font-semibold text-gray-200 mb-2">
+                    Business Type <span className="text-red-400">*</span>
                   </label>
                   <select
                     value={formData.businessType}
@@ -114,8 +114,8 @@ export default function AnalyzePage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Number of Employees <span className="text-red-500">*</span>
+                  <label className="block text-sm font-semibold text-gray-200 mb-2">
+                    Number of Employees <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="number"
@@ -129,7 +129,7 @@ export default function AnalyzePage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-200 mb-2">
                     Yearly Revenue (Optional)
                   </label>
                   <input
@@ -139,7 +139,7 @@ export default function AnalyzePage() {
                     className="input-field"
                     placeholder="e.g., 500000"
                   />
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-gray-300 mt-1">
                     This helps us provide more accurate cost-saving estimates
                   </p>
                 </div>
@@ -159,8 +159,8 @@ export default function AnalyzePage() {
             {step === 2 && (
               <div className="space-y-6 animate-fadeIn">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Monthly Electricity Usage (kWh) <span className="text-red-500">*</span>
+                  <label className="block text-sm font-semibold text-gray-200 mb-2">
+                    Monthly Electricity Usage (kWh) <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="number"
@@ -175,8 +175,8 @@ export default function AnalyzePage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Monthly Water Usage (Liters) <span className="text-red-500">*</span>
+                  <label className="block text-sm font-semibold text-gray-200 mb-2">
+                    Monthly Water Usage (Liters) <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="number"
@@ -191,8 +191,8 @@ export default function AnalyzePage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Monthly Waste Generated (kg) <span className="text-red-500">*</span>
+                  <label className="block text-sm font-semibold text-gray-200 mb-2">
+                    Monthly Waste Generated (kg) <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="number"
@@ -207,7 +207,7 @@ export default function AnalyzePage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-200 mb-2">
                     Monthly Fuel Used (Liters) - Optional
                   </label>
                   <input
@@ -219,7 +219,7 @@ export default function AnalyzePage() {
                     min="0"
                     step="0.01"
                   />
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-gray-300 mt-1">
                     Include if your business uses vehicles or generators
                   </p>
                 </div>

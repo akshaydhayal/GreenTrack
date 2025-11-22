@@ -1,0 +1,38 @@
+{
+  "Restaurant": {
+    "small": { "employees": "1-10", "avgCO2PerMonth": 1200, "avgCO2PerEmployee": 120 },
+    "medium": { "employees": "11-25", "avgCO2PerMonth": 2800, "avgCO2PerEmployee": 140 },
+    "large": { "employees": "26+", "avgCO2PerMonth": 6000, "avgCO2PerEmployee": 200 }
+  },
+  "Retail Shop": {
+    "small": { "employees": "1-5", "avgCO2PerMonth": 800, "avgCO2PerEmployee": 160 },
+    "medium": { "employees": "6-15", "avgCO2PerMonth": 1800, "avgCO2PerEmployee": 150 },
+    "large": { "employees": "16+", "avgCO2PerMonth": 4000, "avgCO2PerEmployee": 200 }
+  },
+  "Small Farm": {
+    "small": { "employees": "1-5", "avgCO2PerMonth": 1500, "avgCO2PerEmployee": 300 },
+    "medium": { "employees": "6-15", "avgCO2PerMonth": 4000, "avgCO2PerEmployee": 350 },
+    "large": { "employees": "16+", "avgCO2PerMonth": 9000, "avgCO2PerEmployee": 400 }
+  },
+  "Small Factory": {
+    "small": { "employees": "1-20", "avgCO2PerMonth": 3000, "avgCO2PerEmployee": 150 },
+    "medium": { "employees": "21-50", "avgCO2PerMonth": 8000, "avgCO2PerEmployee": 180 },
+    "large": { "employees": "51+", "avgCO2PerMonth": 20000, "avgCO2PerEmployee": 250 }
+  },
+  "Office": {
+    "small": { "employees": "1-10", "avgCO2PerMonth": 600, "avgCO2PerEmployee": 60 },
+    "medium": { "employees": "11-30", "avgCO2PerMonth": 1800, "avgCO2PerEmployee": 75 },
+    "large": { "employees": "31+", "avgCO2PerMonth": 5000, "avgCO2PerEmployee": 100 }
+  },
+  "Warehouse": {
+    "small": { "employees": "1-10", "avgCO2PerMonth": 2000, "avgCO2PerEmployee": 200 },
+    "medium": { "employees": "11-30", "avgCO2PerMonth": 5000, "avgCO2PerEmployee": 220 },
+    "large": { "employees": "31+", "avgCO2PerMonth": 12000, "avgCO2PerEmployee": 250 }
+  },
+  "Other": {
+    "small": { "employees": "1-10", "avgCO2PerMonth": 1000, "avgCO2PerEmployee": 100 },
+    "medium": { "employees": "11-25", "avgCO2PerMonth": 2500, "avgCO2PerEmployee": 120 },
+    "large": { "employees": "26+", "avgCO2PerMonth": 6000, "avgCO2PerEmployee": 150 }
+  }
+}
+
